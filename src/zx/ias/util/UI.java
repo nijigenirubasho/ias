@@ -12,6 +12,12 @@ import java.util.Enumeration;
 public class UI {
 
     /**
+     * 禁止实例化
+     */
+    private UI() {
+    }
+
+    /**
      * 使用系统默认UI风格
      */
     public static void configSystemDefaultUIStyle() {
@@ -49,11 +55,5 @@ public class UI {
             header.setResizingColumn(column);
             column.setWidth(width + myTable.getIntercellSpacing().width + reserveWidth);
         }
-    }
-
-    /**
-     * 禁止实例化
-     */
-    private UI() {
     }
 }

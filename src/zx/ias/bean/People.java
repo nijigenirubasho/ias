@@ -34,6 +34,30 @@ public class People implements Serializable {
         this.address = address;
     }
 
+    /**
+     * 取可读性别字符串
+     *
+     * @param sexType {@link SexType}
+     * @return “男“或者”女“
+     */
+    public static String getReadableSexString(SexType sexType) {
+        String[] sexList = {"男", "女"};
+        if (sexType == null) return Arrays.toString(sexList);
+        return sexList[sexType.ordinal()];
+    }
+
+    /**
+     * getReadableSexString反向
+     *
+     * @param string 　“男“或者其他
+     * @return {@link SexType)
+     */
+    public static SexType getSexTypeFromString(String string) {
+        if (string != null && string.equals("男"))
+            return SexType.MALE;
+        else return SexType.FEMALE;
+    }
+
     @Override
     public String toString() {
         return "People{" +
@@ -74,30 +98,6 @@ public class People implements Serializable {
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    /**
-     * 取可读性别字符串
-     *
-     * @param sexType {@link SexType}
-     * @return “男“或者”女“
-     */
-    public static String getReadableSexString(SexType sexType) {
-        String[] sexList = {"男", "女"};
-        if (sexType == null) return Arrays.toString(sexList);
-        return sexList[sexType.ordinal()];
-    }
-
-    /**
-     * getReadableSexString反向
-     *
-     * @param string 　“男“或者其他
-     * @return {@link SexType)
-     */
-    public static SexType getSexTypeFromString(String string) {
-        if (string != null && string.equals("男"))
-            return SexType.MALE;
-        else return SexType.FEMALE;
     }
 
     public enum SexType {

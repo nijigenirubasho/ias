@@ -25,16 +25,13 @@ public class DataManager extends JFrame implements ActionListener, TableModelLis
      * 数据文件
      */
     public static String CFG_FILENAME = "ias_data.dat";
-
-    private DefaultTableModel tableModel;
-    private JTable dataViewTable;
-
     /**
      * 按键标和表头标
      */
     private final String addRc = "增加记录", delRc = "删除记录", qryRc = "查询记录", edtLI = "编辑登录信息", e2CSV = "导出CSV";
     private final String[] columnNames = {"姓名", "性别", "生日", "地址"};
-
+    private DefaultTableModel tableModel;
+    private JTable dataViewTable;
     private JButton addRecordBtn = new JButton(addRc),
             deleteRecordBtn = new JButton(delRc),
             queryRecordBtn = new JButton(qryRc),

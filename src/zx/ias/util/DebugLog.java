@@ -12,11 +12,18 @@ import java.util.logging.*;
 
 public class DebugLog {
 
+    /**
+     * 日志输出格式
+     */
+    private static final String FORMAT = "%s[%s|:|%s]";
+    private static String LOG_FILENAME = "debug_" + Long.toString(System.currentTimeMillis(), Character.MAX_RADIX) + ".log";
     private static Logger logger;
     private static String tag;
     private static boolean hasSetFile;
-
-    public static String LOG_FILENAME = "debug_" + Long.toString(System.currentTimeMillis(), Character.MAX_RADIX) + ".log";
+    /**
+     * 开关：日志输出
+     */
+    private static boolean DEBUG = Global.LOG_DEBUG;
 
     static {
         logger = Logger.getGlobal();
@@ -28,16 +35,6 @@ public class DebugLog {
         consoleHandler.setLevel(Level.OFF);
         logger.addHandler(consoleHandler);
     }
-
-    /**
-     * 开关：日志输出
-     */
-    private static boolean DEBUG = Global.LOG_DEBUG;
-
-    /**
-     * 日志输出格式
-     */
-    private static final String FORMAT = "%s[%s|:|%s]";
 
     /**
      * 标准输出
