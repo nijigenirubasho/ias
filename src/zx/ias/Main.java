@@ -14,6 +14,10 @@ import java.util.Random;
 
 /**
  * MainEntry
+ * 运行环境：Windows 10(1903),
+ * java version "12" 2019-03-19
+ * Java(TM) SE Runtime Environment (build 12+33)
+ * Java HotSpot(TM) 64-Bit Server VM (build 12+33, mixed mode, sharing)
  */
 
 public class Main {
